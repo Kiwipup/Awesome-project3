@@ -8,6 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+        <link href="/css/app.css" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
         <style>
@@ -61,12 +62,41 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .jumbotron {
+                /* The image used */
+                background-image: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
+
+                /* Full height */
+                height: 500px;
+                /*height: 347px;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;*/
+
+
+                /* Create the parallax scrolling effect */
+               background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+            }
         </style>
     </head>
     <body>
+        <div class="jumbotron jumbotron-fluid"><div class="content">
+            <div class="title m-b-md">
+                Ghibli Blog
+            </div>
+
+            <div class="links">
+
+            </div>
+          </div>
+        </div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div id="nav" class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
@@ -78,21 +108,25 @@
                     @endauth
                 </div>
             @endif
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">Dashboard</div>
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                            <div class="card-body">
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+
+
+            </div>
+
+
+        <script src="/js/app.js"></script>
     </body>
 </html>

@@ -12,5 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+        var_dump(\Auth::user());
+
+        $this->call(UsersTableSeeder::class);
+        
     }
 }

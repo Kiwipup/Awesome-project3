@@ -34,3 +34,12 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 const app = new Vue({
     el: '#app'
 });
+
+$(window).scroll(function(){
+  if($(document).scrollTop() > 50) {
+    $('nav').addClass('shrink');
+  }
+  else {
+    $('nav').removeClass('shrink');
+  }
+});
