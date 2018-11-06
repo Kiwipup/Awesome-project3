@@ -16,6 +16,7 @@ class CreateBlogpostsTable extends Migration
         Schema::create('blogposts', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 250);
+            $table->string('content', 1000000);
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
