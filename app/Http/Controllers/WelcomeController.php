@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-
 class WelcomeController extends Controller
 {
     /**
@@ -14,8 +13,12 @@ class WelcomeController extends Controller
      */
     public function index()
     {
-      $blogposts = posts()->orderBy('updated_at', 'desc')->get();
-      return view('welcome', compact('blogposts'));
+      //$blogposts = posts()->orderBy('updated_at', 'desc')->get();
+      //return view('welcome', compact('blogposts'));
+
+
+      //$blogposts = App\allPosts::AllPosts()->get();
+      //return view('/', compact('blogposts'));
     }
 
     /**

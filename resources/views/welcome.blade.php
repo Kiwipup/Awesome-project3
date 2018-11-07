@@ -98,7 +98,7 @@
             @if (Route::has('login'))
                 <div id="nav" class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('posts') }}">My Dashboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -113,13 +113,13 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card">
-                            <div class="card-header"><h4><strong>{{ $post->title }}</strong><h4></div>
+                            <div class="card-header"><h4><strong>{{ $post->title }}</strong><small class="float-right"> By {{$post->author}}</small><h4></div>
 
                             <div class="card-body">
 
                                 <p>{{$post->content}}</p>
 
-                              <p>Last updated on <small>{{$post-> fixTimeStamp()}}</small></p>
+                              <p>Last updated on <small>{{$post-> updated_at}}</small></p>
                               </div>
                         </div>
                     </div>

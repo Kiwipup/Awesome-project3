@@ -12,13 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  $blogposts = DB::table('blogposts')->orderBy('updated_at', 'desc')->get();
+  return view('welcome', compact('blogposts'));
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/posts', 'HomeController@index')->name('posts');
 
 Route::resource('posts', 'BlogpostController')->middleware('auth');
 
-Route::resource('/', 'WelcomeController');
+//Route::resource('/', 'WelcomeController');

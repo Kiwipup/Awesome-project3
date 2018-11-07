@@ -16,6 +16,7 @@ class BlogpostController extends Controller
       $posts = \Auth::user()->posts()->orderBy('updated_at', 'desc')->get();
       return view('posts.index', compact('posts'));
 
+
     }
 
     /**
@@ -39,8 +40,12 @@ class BlogpostController extends Controller
       $blogposts = new \App\Blogpost;
       $blogposts->title = $request->input('postsubject');
       $blogposts->content = $request->input('postcontent');
+      $blogposts->author = $request->username;
+
 
       $blogposts->user_id = \Auth::id();
+      $blogposts->author = \Auth::user()->username;
+
       $blogposts->save();
 
       $request->session()->flash('status', "A new blog post called <strong>{$blogposts->title}</strong> was added!");
@@ -91,4 +96,6 @@ class BlogpostController extends Controller
     {
         //
     }
+
+
 }
