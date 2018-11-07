@@ -21,6 +21,12 @@
                 margin: 0;
             }
 
+            
+            .card-body {
+              color: rgba(0,0,0,1);
+              font-weight: 400;
+            }
+
           /*  .full-height {
                 height: 100vh;
             }*/
@@ -62,6 +68,7 @@
 
             .title {
                 font-size: 84px;
+                color: #FFC03F;
             }
 
             .links > a {

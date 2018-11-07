@@ -22,7 +22,7 @@
         <input class="form-control" type="text" id="postcontent" name="postcontent" value="{{$post->content}}">
 
     </div>
-    <button type="submit" class="btn btn-primary">Edit post</button>
+    <button type="submit" class="btn">Edit post</button>
 </form>
 
 @endsection

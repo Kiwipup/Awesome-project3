@@ -12095,3 +12095,13 @@ body {
   color: #FFC03F;
 }
 
+.card-body {
+  color: black;
+  font-weight: 400;
+}
+
+button.btn {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #FFC03F;
+}
+

@@ -18,7 +18,7 @@
         <input class="form-control" type="text" id="postcontent" name="postcontent" placeholder="Write your post content here.">
 
     </div>
-    <button type="submit" class="btn btn-primary">Add post</button>
+    <button type="submit" class="btn">Add post</button>
 </form>
 
 @endsection
