@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background: transparent;
+                background-color: black;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -21,7 +21,7 @@
                 margin: 0;
             }
 
-            
+
             .card-body {
               color: rgba(0,0,0,1);
               font-weight: 400;
@@ -82,8 +82,8 @@
             }
 
             .card-header {
-              background-color: rgba(0,0,0,.7);
-              color: #FFC03F;
+              background-color: #FFC03F;
+              color: rgba(0,0,0,1)
             }
 
             .m-b-md {
@@ -94,7 +94,7 @@
                 background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
 
                 /* Full height */
-                height: 500px;
+                height: 600px;
                 /*height: 347px;
                     background-position: center;
                     background-repeat: no-repeat;
