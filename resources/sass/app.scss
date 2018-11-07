@@ -8,13 +8,100 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
+@import '~jquery-ui/themes/base/all.css';
+
+/*.navbar-laravel {
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+}*/
 
 #nav.shrink {
-  height: 60px;
-  transition: all ease .5s;
-  background: rgba(145,168,208,.7); // Change background to black on scroll
+    height: 60px;
+    transition: all ease .5s;
+    background: rgba(0,0,0,.7);
+    }
+
+
+#nav {
+display: block;
+background: transparent; // Transparent initial setting
+position: fixed;
+width: 100%;
+z-index: 99999;
+transition: all ease .5s;
+}
+
+.jumbotron {
+    /* The image used */
+    background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
+
+    /* Full height */
+    height: 500px;
+    /*height: 347px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;*/
+
+
+    /* Create the parallax scrolling effect */
+   background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #FFC03F;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+html, body {
+    background: transparent;
+    color: #636b6f;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.navbar-brand, .nav-link {
+
+  color: #FFC03F !important;
+  letter-spacing: .1rem;
+  text-decoration: none;
+
+}
+
+.card-header {
+  background-color: rgba(0,0,0,.7);
+  color: #FFC03F;
 }

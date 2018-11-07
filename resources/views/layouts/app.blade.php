@@ -21,8 +21,8 @@
 </head>
 <body>
     <div id="app">
+      <div id="nav" class="shrink flex-center full-height">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Go to all posts
                 </a>
@@ -73,12 +73,18 @@
                         @endguest
                     </ul>
                 </div>
-            </div>
+
         </nav>
+      </div>
+      <div class="jumbotron jumbotron-fluid">
+      </div>
+        <div class="container">
+
 
         <main class="py-4">
             @yield('content')
         </main>
+      </div>
     </div>
 </body>
 </html>

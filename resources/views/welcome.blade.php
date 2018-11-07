@@ -13,7 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background: transparent;
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
@@ -21,8 +21,23 @@
                 margin: 0;
             }
 
-            .full-height {
+          /*  .full-height {
                 height: 100vh;
+            }*/
+            #nav.shrink {
+                height: 60px;
+                transition: all ease .5s;
+                background: rgba(0,0,0,.7);
+                }
+
+
+            #nav {
+            display: block;
+            background: transparent; // Transparent initial setting
+            position: fixed;
+            width: 100%;
+            z-index: 99999;
+            transition: all ease .5s;
             }
 
             .flex-center {
@@ -50,7 +65,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #FFC03F;
                 padding: 0 25px;
                 font-size: 13px;
                 font-weight: 600;
@@ -59,12 +74,17 @@
                 text-transform: uppercase;
             }
 
+            .card-header {
+              background-color: rgba(0,0,0,.7);
+              color: #FFC03F;
+            }
+
             .m-b-md {
                 margin-bottom: 30px;
             }
             .jumbotron {
                 /* The image used */
-                background-image: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
+                background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
 
                 /* Full height */
                 height: 500px;
@@ -84,8 +104,24 @@
         </style>
     </head>
     <body>
+      <div id="nav" class=" shrink flex-center full-height">
+          @if (Route::has('login'))
+              <div  class="top-right links">
+                  @auth
+                      <a href="{{ url('posts') }}">My Dashboard</a>
+                  @else
+                      <a href="{{ route('login') }}">Login</a>
+
+                      @if (Route::has('register'))
+                          <a href="{{ route('register') }}">Register</a>
+                      @endif
+                  @endauth
+              </div>
+          @endif
+        </div>
         <div class="jumbotron jumbotron-fluid"><div class="content">
-            <div class="title m-b-md">
+
+            <div class="title">
                 Ghibli Blog
             </div>
 
@@ -94,23 +130,11 @@
             </div>
           </div>
         </div>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div id="nav" class="top-right links">
-                    @auth
-                        <a href="{{ url('posts') }}">My Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+
             <div class="container">
               @foreach ($blogposts as $post)
-                <div class="row justify-content-center">
+                <div class="row justify-content-center mb-4">
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header"><h4><strong>{{ $post->title }}</strong><small class="float-right"> By {{$post->author}}</small><h4></div>
@@ -129,9 +153,10 @@
 
 
 
-            </div>
+
 
 
         <script src="/js/app.js"></script>
+
     </body>
 </html>

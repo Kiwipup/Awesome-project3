@@ -71,7 +71,8 @@ class BlogpostController extends Controller
      */
     public function edit($id)
     {
-        //
+      $post = \App\Blogpost::find($id);
+        return view('posts.edit', compact('post'));
     }
 
     /**
@@ -83,7 +84,19 @@ class BlogpostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $blogposts = \App\Blogpost::find($id);
+      $blogposts->title = $request->input('postsubject');
+      $blogposts->content = $request->input('postcontent');
+      $blogposts->author = $request->username;
+
+
+      $blogposts->user_id = \Auth::id();
+      $blogposts->author = \Auth::user()->username;
+
+      $blogposts->save();
+
+      $request->session()->flash('status', "You have edited the post successfully!");
+      return redirect('/posts');
     }
 
     /**

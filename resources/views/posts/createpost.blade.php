@@ -1,5 +1,9 @@
 @extends('layouts.postwrapper')
 
+@section('nav-link')
+<a class="nav-link" href="/posts">Dashboard</a>
+@endsection
+
 @section('postheader')
     Create a new blog post!
 @endsection
@@ -10,7 +14,7 @@
     @csrf
     <div class="form-group">
         <label for="postsubject">Blog Post Title</label>
-        <input class="form-control" type="text" id="postsubject" name="postsubject" placeholder="What is your post about?">
+        <input class="form-control mb-3" type="text" id="postsubject" name="postsubject" placeholder="What is your post about?">
         <input class="form-control" type="text" id="postcontent" name="postcontent" placeholder="Write your post content here.">
 
     </div>
