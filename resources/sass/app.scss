@@ -32,22 +32,21 @@ transition: all ease .5s;
 }
 
 .jumbotron {
-    /* The image used */
-    background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
+  /* The image used */
+  background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
 
-    /* Full height */
-    height: 500px;
-    /*height: 347px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;*/
+  height: 100%;
+  max-width: 100%;
+  /*height: 347px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;*/
 
+ background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    /* Create the parallax scrolling effect */
-   background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 
 }
 
@@ -73,6 +72,7 @@ transition: all ease .5s;
 
 .title {
     font-size: 84px;
+    color: #FFC03F;
 }
 
 .links > a {
@@ -85,7 +85,7 @@ transition: all ease .5s;
     text-transform: uppercase;
 }
 html, body {
-      background-color: black;
+      background:transparent;
     color: #636b6f;
     font-family: 'Nunito', sans-serif;
     font-weight: 200;
@@ -114,4 +114,22 @@ html, body {
 button.btn {
   background-color: rgba(0,0,0,.7);
   color: #FFC03F;
+}
+
+span.navbar-toggler-icon {
+  background-color: #FFC03F;
+}
+
+button:focus {
+  outline: 0;
+}
+
+.links > a {
+    color: #FFC03F;
+    padding: 0 25px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
 }

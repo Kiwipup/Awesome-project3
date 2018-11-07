@@ -76,15 +76,16 @@
 
         </nav>
       </div>
-      <div class="jumbotron jumbotron-fluid">
-      </div>
-        <div class="container">
+      <div class="jumbotron mb-0 img-fluid">
+
+        <div class="container mt-5">
 
 
         <main class="py-4">
             @yield('content')
         </main>
       </div>
+    </div>
     </div>
 </body>
 </html>
