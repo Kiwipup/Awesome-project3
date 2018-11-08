@@ -11,7 +11,7 @@
         <link href="/css/app.css" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
-      
+
     </head>
     <body>
       <div id="nav" class=" shrink flex-center full-height">
@@ -52,7 +52,7 @@
                               <div class="card-footer bg-transparent">
                               <span><h5><small class="float-right"> By {{$post->author}}</small><h5></span>
                                 <span><h6 class="float-right mr-2">Last updated <small>{{$post-> updated_at}}</small></h6></span>
-
+                                <a class="float-left text-secondary" href="/posts/{{ $post->id }}/comments">Comments</a>
                               </div>
                         </div>
                     </div>

@@ -16,10 +16,23 @@ Route::get('/', function () {
   return view('welcome', compact('blogposts'));
 });
 
+Route::get('/posts/{id}/comments', function () {
+  $comments = DB::table('comments')->orderBy('updated_at', 'desc')->get();
+  return view('/posts/comments', compact('comments'));
+});
+Route::post('/posts/{id}/comments', function () {
+  $comments = DB::table('comments')->orderBy('updated_at', 'desc')->get();
+});
+
+
+
 Auth::routes();
 
 Route::get('/posts', 'HomeController@index')->name('posts');
 
+
 Route::resource('posts', 'BlogpostController')->middleware('auth');
+Route::resource('/posts/comments', 'CommentsController')->middleware('auth');
+
 
 //Route::resource('/', 'WelcomeController');

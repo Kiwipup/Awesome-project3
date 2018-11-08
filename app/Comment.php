@@ -3,11 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use Carbon\Carbon;
 
-class Blogpost extends Model
+class Comment extends Model
 {
-  
+  public function post() {
+      return $this->belongsTo('App\Blogpost');
+  }
+
+  public function user() {
+      return $this->belongsTo('App\User');
+  }
 
   public function fixTimeStamp() {
 
@@ -18,14 +23,4 @@ class Blogpost extends Model
         return $dt->format('n/j/y \\a\\t g:i:s a');
 
     }
-
-    public function user() {
-        return $this->belongsTo('App\User');
-    }
-
-    public function comments() {
-      return $this->hasMany('App\Comment');
-    }
-
-
 }

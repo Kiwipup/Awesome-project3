@@ -12020,7 +12020,7 @@ a.text-dark:focus {
 .jumbotron {
   /* The image used */
   background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
-  height: 100%;
+  height: 100% auto;
   max-width: 100%;
   /*height: 347px;
       background-position: center;
