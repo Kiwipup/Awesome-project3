@@ -34,7 +34,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $post_id)
     {
       $comments = new \App\Comment;
       $comments->comment_content = $request->input('comment');
@@ -43,13 +43,13 @@ class CommentController extends Controller
 
       $comments->user_id = \Auth::id();
       $comments->author = \Auth::user()->username;
-      $comments->post_id = \Auth::post()->post_id;
+      $comments->post_id = $post_id;
 
 
-      $blogposts->save();
+      $comments->save();
 
       $request->session()->flash('status', "Your comment was added successfully!");
-      return redirect('/posts/comments');
+      return redirect("/posts/{$post_id}/comments");
     }
 
     /**
