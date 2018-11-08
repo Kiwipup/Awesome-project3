@@ -13,7 +13,8 @@ class CommentController extends Controller
      */
     public function index()
     {
-
+      $comments = \Auth::user()->posts()->orderBy('updated_at', 'desc')->get();
+      return view('posts.comments', compact('comments'));
     }
 
     /**
@@ -48,7 +49,7 @@ class CommentController extends Controller
       $blogposts->save();
 
       $request->session()->flash('status', "Your comment was added successfully!");
-      return redirect('/posts/{post_id}/comments');
+      return redirect('/posts/comments');
     }
 
     /**

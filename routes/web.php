@@ -18,11 +18,9 @@ Route::get('/', function () {
 
 Route::get('/posts/{id}/comments', function () {
   $comments = DB::table('comments')->orderBy('updated_at', 'desc')->get();
-  return view('/posts/comments', compact('comments'));
+  return view('/posts/{id}/comments', compact('comments'));
 });
-Route::post('/posts/{id}/comments', function () {
-  $comments = DB::table('comments')->orderBy('updated_at', 'desc')->get();
-});
+//Route::post('/posts/{id}/comments', 'CommentsController');
 
 
 
@@ -32,7 +30,7 @@ Route::get('/posts', 'HomeController@index')->name('posts');
 
 
 Route::resource('posts', 'BlogpostController')->middleware('auth');
-Route::resource('/posts/comments', 'CommentsController')->middleware('auth');
+Route::resource('/posts/{id}/comments/{post_id}', 'CommentsController')->middleware('auth');
 
 
 //Route::resource('/', 'WelcomeController');
