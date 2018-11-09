@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-        <link href="/css/app.css" rel="stylesheet" type="text/css">
+        <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
 
@@ -29,7 +29,8 @@
               </div>
           @endif
         </div>
-        <div class="jumbotron mb-0 img-fluid"><div class="content">
+        <div id="app">
+        <div style="height:inherit;" class="jumbotron mb-0"><div class="content">
 
             <div class="title mb-b-md">
                 Ghibli Blog
@@ -63,6 +64,7 @@
 
           </div>
         </div>
+      </div>
 
 
 

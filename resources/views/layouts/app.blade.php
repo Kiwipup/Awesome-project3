@@ -77,9 +77,9 @@
 
         </nav>
       </div>
-      <div class="jumbotron mb-0 img-fluid">
+      <div id="wrapper" class="jumbotron mb-0 img-fluid">
 
-        <div style="height:inherit;" class="container mt-5">
+        <div class="container mt-5">
 
 
         <main class="py-4">
