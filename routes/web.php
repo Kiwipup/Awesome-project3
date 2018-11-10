@@ -24,7 +24,7 @@ Route::get('/posts/{post_id}/comments', function () {
 
 Auth::routes();
 
-Route::get('/posts', 'HomeController@index')->name('posts');
+Route::get('home', 'HomeController@index')->name('home');
 
 
 Route::resource('posts', 'BlogpostController')->middleware('auth');
