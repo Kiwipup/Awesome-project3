@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 </head>
-<body>
+<body class="pretty">
     <div id="app">
       <div id="nav" class="shrink flex-center full-height">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -77,16 +77,15 @@
 
         </nav>
       </div>
-      <div id="wrapper" class="jumbotron mb-0 img-fluid">
 
-        <div class="container mt-5">
+        <div class="container">
 
 
-        <main class="py-4">
+        <main class="py-4 page">
             @yield('content')
         </main>
       </div>
-    </div>
+
     </div>
 </body>
 </html>

@@ -13,8 +13,9 @@
         <!-- Styles -->
 
     </head>
-    <body>
-      <div id="nav" class=" shrink flex-center full-height">
+    <body class="pretty">
+
+      <div id="nav" class="shrink flex-center full-height">
           @if (Route::has('login'))
               <div  class="top-right links">
                   @auth
@@ -29,14 +30,22 @@
               </div>
           @endif
         </div>
+
+
+
         <div id="app">
-        <div style="height:inherit;" class="jumbotron mb-0"><div class="content">
 
-            <div class="title mb-b-md">
-                Ghibli Blog
-            </div>
 
-            <div class="container mt-5">
+
+            <div class="container text-center">
+
+
+              <div class="title">
+                  Ghibli Blog
+              </div>
+            
+
+              <div class="page">
               @foreach ($blogposts as $post)
                 <div class="row justify-content-center text-left mb-4">
                     <div class="col-md-8">
@@ -53,17 +62,19 @@
                               <div class="card-footer bg-transparent">
                               <span><h5><small class="float-right"> By {{$post->author}}</small><h5></span>
                                 <span><h6 class="float-right mr-2">Last updated <small>{{$post-> updated_at}}</small></h6></span>
-                                <a class="float-left text-secondary" href="/posts/{{ $post->id }}/comments">Comments</a>
+                                <a class="float-left text-secondary" href="/posts/{{$post->id}}/comments">Comments</a>
                               </div>
                         </div>
                     </div>
                 </div>
                 @endforeach
+              </div>
             </div>
 
 
-          </div>
-        </div>
+
+
+
       </div>
 
 

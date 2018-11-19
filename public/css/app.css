@@ -12011,16 +12011,17 @@ a.text-dark:focus {
   display: block;
   background: transparent;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 99999;
   -webkit-transition: all ease .5s;
   transition: all ease .5s;
 }
 
-.jumbotron {
+body.pretty {
   /* The image used */
   background: url("https://static.gamespot.com/uploads/scale_super/348/3488957/2674855-mxwmpvi.jpg");
-  min-height: 100%;
+  height: 100%;
   max-width: 100%;
   /*height: 347px;
       background-position: center;
@@ -12054,13 +12055,10 @@ a.text-dark:focus {
   top: 18px;
 }
 
-.content {
-  text-align: center;
-}
-
 .title {
   font-size: 84px;
   color: #FFC03F;
+  margin-top: 200px;
 }
 
 .links > a {
@@ -12079,7 +12077,6 @@ body {
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
-  height: 100%;
   margin: 0;
 }
 
@@ -12123,15 +12120,11 @@ button:focus {
   text-transform: uppercase;
 }
 
+.page {
+  margin-top: 100px;
+}
+
 /*#wrapper {
   height:100%;
 }*/
-
-#app {
-  min-height: 100%;
-}
-
-#wrapper {
-  min-height: 100%;
-}
 

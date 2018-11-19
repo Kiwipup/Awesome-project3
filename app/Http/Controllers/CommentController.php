@@ -13,7 +13,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-      $comments = \Auth::user()->posts()->orderBy('updated_at', 'desc')->get();
+      $comments = \Auth::post()->comments()->orderBy('updated_at', 'desc')->get();
       return view('posts.comments', compact('comments'));
     }
 
@@ -34,7 +34,7 @@ class CommentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $post_id)
+    public function store(Request $request)
     {
       $comments = new \App\Comment;
       $comments->comment_content = $request->input('comment');
@@ -43,13 +43,13 @@ class CommentController extends Controller
 
       $comments->user_id = \Auth::id();
       $comments->author = \Auth::user()->username;
-      $comments->post_id = $post_id;
+      $comments->post_id = \Auth::post()->id;
 
 
       $comments->save();
 
       $request->session()->flash('status', "Your comment was added successfully!");
-      return redirect("/posts/{$post_id}/comments");
+      return redirect('posts.comments');
     }
 
     /**

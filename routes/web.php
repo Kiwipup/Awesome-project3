@@ -16,9 +16,9 @@ Route::get('/', function () {
   return view('welcome', compact('blogposts'));
 });
 
-Route::get('/posts/{post_id}/comments', function () {
+Route::get('/posts/comments', function () {
   $comments = DB::table('comments')->orderBy('updated_at', 'desc')->get();
-  return view('/posts/comments', compact('comments'));
+  return view('/posts/{id}/comments', compact('comments'));
 });
 
 
@@ -28,7 +28,7 @@ Route::get('home', 'HomeController@index')->name('home');
 
 
 Route::resource('posts', 'BlogpostController')->middleware('auth');
-Route::resource('/posts/comments', 'CommentsController')->middleware('auth');
+Route::resource('/comments', 'CommentsController')->middleware('auth');
 
 
 //Route::resource('/', 'WelcomeController');

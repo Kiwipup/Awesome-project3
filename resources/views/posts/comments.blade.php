@@ -10,7 +10,7 @@
 
 @section('postcontent')
 
-<form class="" method="post" action="/posts">
+<form class="" method="post" action="">
     @csrf
     <div class="form-group">
         <input class="form-control mb-3" type="text" id="comment" name="comment" placeholder="What do you want to say?">
